@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;800;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  scroll-behavior: smooth; }
+
+html {
+  font-size: 10px; }
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: 'Nunito', sans-serif; }
+
+ul {
+  list-style: none; }
+
+h1 {
+  font-size: 4rem; }
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700; }
+
+h3 {
+  font-weight: 700;
+  font-size: 2.5rem; }
+
+h4 {
+  font-weight: 700;
+  font-size: 2rem; }
+
+a {
+  text-decoration: none; }
+
+.btn {
+  border: none;
+  padding: 0.8rem 1rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease; }
+
+.btn-primary {
+  border: 2px solid #B80000;
+  background-color: #B80000;
+  color: #fff; }
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #B80000; }
+
+.btn-primary-outline {
+  border: 2px solid #B80000;
+  background-color: transparent;
+  color: #B80000; }
+  .btn-primary-outline:hover {
+    background-color: #B80000;
+    color: #fff; }
+
+.btn-secondary {
+  border: 2px solid #5F8670;
+  background-color: #5F8670;
+  color: #fff; }
+  .btn-secondary:hover {
+    background-color: transparent;
+    color: #5F8670; }
+
+.btn-secondary-outline {
+  border: 2px solid #5F8670;
+  background-color: transparent;
+  color: #5F8670; }
+  .btn-secondary-outline:hover {
+    background-color: #5F8670;
+    color: #fff; }
+
+.flex {
+  display: flex;
+  justify-content: center; }
+
+.header {
+  flex-direction: column;
+  align-items: center; }
+  .header::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: .5rem;
+    background: #fe8c00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f83600, #fe8c00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .header .header-container {
+    width: 60%; }
+    .header .header-container .navbar {
+      padding: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .header .header-container .navbar .logo a {
+        font-size: 3rem;
+        color: #B80000;
+        font-weight: 500; }
+      .header .header-container .navbar .search-bar {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        border-bottom: 2px solid #B80000; }
+        .header .header-container .navbar .search-bar input {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          transition: all 0.2s ease;
+          width: 30rem;
+          height: 3.3rem;
+          font-size: 1.7rem;
+          color: #B80000; }
+          .header .header-container .navbar .search-bar input::placeholder {
+            color: #B80000;
+            text-align: center; }
+        .header .header-container .navbar .search-bar button {
+          margin-left: 1rem;
+          border: none;
+          cursor: pointer;
+          background-color: transparent; }
+          .header .header-container .navbar .search-bar button i {
+            font-size: 2rem;
+            color: #B80000; }
+      .header .header-container .navbar .location-info button {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: #B80000;
+        font-size: 1.8rem; }
+        .header .header-container .navbar .location-info button i {
+          display: inline-block;
+          font-size: 1.5rem; }
+
+@media (max-width: 1100px) {
+  .header .header-container {
+    width: 95%; } }
+
+@media (max-width: 650px) {
+  .header .header-container .navbar {
+    flex-direction: column; }
+    .header .header-container .navbar .logo a {
+      font-size: 3rem;
+      color: #B80000;
+      font-weight: 500; }
+    .header .header-container .navbar .location-info {
+      position: absolute;
+      top: 1rem;
+      right: 1rem; } }
+
+.app {
+  margin-top: 8rem; }
+  .app .app-container {
+    width: 60%; }
+    .app .app-container .current-weather {
+      width: 100%; }
+      .app .app-container .current-weather .current-card {
+        background: #fe8c00;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #f83600, #fe8c00);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-top-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 5rem;
+        position: relative; }
+        .app .app-container .current-weather .current-card .weather-info {
+          flex-basis: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          .app .app-container .current-weather .current-card .weather-info .weather-info-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .app .app-container .current-weather .current-card .weather-info .weather-info-primary .weather-icon img {
+              width: 130px; }
+            .app .app-container .current-weather .current-card .weather-info .weather-info-primary .temperature {
+              margin-left: 3rem;
+              font-size: 7rem;
+              font-weight: 700; }
+          .app .app-container .current-weather .current-card .weather-info .city-info {
+            font-size: 3rem;
+            font-weight: 500;
+            text-align: center; }
+        .app .app-container .current-weather .current-card .weather-details {
+          flex-basis: 60%; }
+          .app .app-container .current-weather .current-card .weather-details .detail {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            font-size: 2rem;
+            border-bottom: 2px solid #B80000;
+            padding: 0 1rem; }
+        .app .app-container .current-weather .current-card .last-update {
+          position: absolute;
+          top: 1rem;
+          right: 6rem;
+          display: flex;
+          font-size: 1.4rem; }
+    .app .app-container .more-details {
+      padding: 2rem 1rem;
+      background: #fe8c00;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #f83600, #fe8c00);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem; }
+      .app .app-container .more-details .more-details-container {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 3rem; }
+        .app .app-container .more-details .more-details-container .detail-item {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #B80000;
+          font-weight: 500; }
+          .app .app-container .more-details .more-details-container .detail-item .item-icon {
+            display: flex;
+            align-items: center; }
+            .app .app-container .more-details .more-details-container .detail-item .item-icon svg {
+              margin-right: 1rem; }
+    .app .app-container .daily-buttons {
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #FF9800;
+      margin-top: 2rem; }
+      .app .app-container .daily-buttons .buttons button {
+        background-color: transparent;
+        border: none;
+        font-size: 2rem;
+        margin-right: 3rem;
+        cursor: pointer;
+        font-weight: 600; }
+        .app .app-container .daily-buttons .buttons button:hover {
+          color: #FF9800; }
+    .app .app-container .hourly {
+      margin-top: 2rem;
+      display: none; }
+      .app .app-container .hourly .hourly-container {
+        display: flex;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        gap: 0 1rem; }
+        .app .app-container .hourly .hourly-container::-webkit-scrollbar {
+          background-color: #fff; }
+        .app .app-container .hourly .hourly-container::-webkit-scrollbar-thumb {
+          background-color: #FF9800;
+          border: 2px solid #B80000; }
+        .app .app-container .hourly .hourly-container .hourly-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 3rem 4rem;
+          background: #fe8c00;
+          /* fallback for old browsers */
+          background: -webkit-linear-gradient(to bottom, #f83600, #fe8c00);
+          /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to bottom, #f83600, #fe8c00);
+          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+          .app .app-container .hourly .hourly-container .hourly-item .hourly-top .hour {
+            text-align: center;
+            font-weight: 700; }
+          .app .app-container .hourly .hourly-container .hourly-item .hourly-top .hourly-weather-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; }
+            .app .app-container .hourly .hourly-container .hourly-item .hourly-top .hourly-weather-info .hourly-temp {
+              font-size: 2rem;
+              font-weight: 600; }
+          .app .app-container .hourly .hourly-container .hourly-item .hourly-bottom {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem; }
+            .app .app-container .hourly .hourly-container .hourly-item .hourly-bottom .rain {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center; }
+              .app .app-container .hourly .hourly-container .hourly-item .hourly-bottom .rain .rain-icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center; }
+    .app .app-container .daily {
+      margin-top: 2rem;
+      display: none; }
+      .app .app-container .daily .daily-container {
+        display: flex;
+        gap: 0rem 2rem; }
+        .app .app-container .daily .daily-container .daily-card {
+          position: relative;
+          background: #fe8c00;
+          /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+          /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #f83600, #fe8c00);
+          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          padding: 4rem;
+          flex-basis: 50%;
+          display: flex;
+          border-radius: 2rem; }
+          .app .app-container .daily .daily-container .daily-card .daily-card-left {
+            flex-basis: 30%;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center; }
+            .app .app-container .daily .daily-container .daily-card .daily-card-left .daily-temperature {
+              width: 100%;
+              font-size: 2.5rem;
+              font-weight: 700;
+              text-align: center; }
+            .app .app-container .daily .daily-container .daily-card .daily-card-left .daily-weather-text {
+              text-align: center;
+              font-size: 2rem;
+              font-weight: 600; }
+          .app .app-container .daily .daily-container .daily-card .daily-card-right {
+            flex-basis: 70%;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 1rem;
+            padding: 1rem; }
+            .app .app-container .daily .daily-container .daily-card .daily-card-right .daily-weather-details {
+              width: 100%; }
+              .app .app-container .daily .daily-container .daily-card .daily-card-right .daily-weather-details .daily-detail {
+                border-bottom: 1px solid #FF9800;
+                padding: 1rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between; }
+                .app .app-container .daily .daily-container .daily-card .daily-card-right .daily-weather-details .daily-detail .daily-detail-icon {
+                  display: flex;
+                  align-items: center; }
+                  .app .app-container .daily .daily-container .daily-card .daily-card-right .daily-weather-details .daily-detail .daily-detail-icon svg {
+                    margin-right: 1rem; }
+
+@media (max-width: 1100px) {
+  .app .app-container {
+    width: 95%; }
+    .app .app-container .current-weather .current-card {
+      flex-direction: column; } }
+
+@media (max-width: 650px) {
+  .app .app-container .more-details .more-details-container {
+    grid-template-columns: repeat(1, 1fr); }
+  .app .app-container .daily .daily-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem 0rem; } }
+
+.active {
+  color: #FF9800 !important; }
+
+.open {
+  display: block !important; }
+
+.footer {
+  margin-top: 10rem;
+  flex-direction: column;
+  align-items: center; }
+  .footer::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background: #fe8c00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f83600, #fe8c00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .footer .footer-container {
+    width: 60%;
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .footer .footer-container .footer-left a {
+      font-size: 3rem;
+      color: #B80000;
+      font-weight: 500; }
+    .footer .footer-container .footer-right {
+      text-align: center; }
+
+@media (max-width: 1100px) {
+  .footer .footer-container {
+    width: 95%; } }
+
+@media (max-width: 650px) {
+  .footer .footer-container {
+    flex-direction: column; } }
+
+
+.error-popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px); }
+  .error-popup .error-popup-card {
+    padding: 15rem;
+    background-color: #B80000;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    .error-popup .error-popup-card .close-button {
+      padding: 1.5rem;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer; }
+      .error-popup .error-popup-card .close-button i {
+        font-size: 2rem; }
+    .error-popup .error-popup-card .error-alert {
+      padding: 1rem 5rem;
+      text-align: center;
+      color: #B80000;
+      font-size: 3rem;
+      font-weight: 700;
+      background-color: #fff;
+      border-radius: 1rem;
+      margin-bottom: 2rem; }
+    .error-popup .error-popup-card .error-text {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff; }
+
+.active-error {
+  display: flex !important; }
+
